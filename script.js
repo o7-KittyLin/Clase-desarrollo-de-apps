@@ -8,10 +8,10 @@ function agregarTexto() {
   var input = document.getElementById('inputTexto');
   lists.push(input.value);
   input.value = '';
-  displayList();
+  generarLista();
 }
 
-function displayList() {
+function generarLista() {
   var data = '';
   for (var i = 0; i < lists.length; i++) {
     data += "<li>" + lists[i] + "</li>";
@@ -19,3 +19,7 @@ function displayList() {
   document.getElementById('elementos').innerHTML = data;
 }
 
+function eliminarTexto() {
+  lists.pop();
+  generarLista();
+}
